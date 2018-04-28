@@ -623,4 +623,6 @@
   <!-- OmniROM -->
   <include name="omni-default.xml" />
 
+  <!-- RedWolf -->
+  <include name="rw.xml" />
 </manifest>

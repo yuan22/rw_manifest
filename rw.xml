@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="rw"
+          fetch="https://github.com/RedWolfRecovery/" />  
+
+  <remove-project name="platform/bootable/recovery"/>
+  <remove-project name="android_build"/>
+
+  <project path="build/make" name="rw_build" remote="rw" revision="rw-o" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  
+  <project name="rw_manifest" path="manifest" remote="rw" revision="rw-o" />
+
+  <project name="rw_recovery" path="bootable/recovery" remote="rw" revision="rw" />
+  
+  <project name="rw_vendor" path="vendor/redwolf" remote="rw" revision="rw" />
+
+  <project name="rw_device" path="device/xiaomi/sagit" remote="rw" revision="rw-sagit" />
+
+</manifest>
